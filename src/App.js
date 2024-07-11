@@ -1,25 +1,24 @@
-import logo from './logo.svg';
+// src/App.js
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import HomePage from './components/HomePage';
+import PropertyForm from './components/PropertyForm';
+import PropertyPreview from './components/PropertyPreview';
+import BadPath from './components/BadPath';
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/property-form" element={<PropertyForm />} />
+        <Route path="/property-preview" element={<PropertyPreview />} />
+        <Route path="/bad-path" element={<BadPath />} />
+        <Route path="*" element={<Navigate to="/bad-path" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

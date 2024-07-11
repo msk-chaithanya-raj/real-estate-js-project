@@ -1,0 +1,28 @@
+/* src/components/Header/Header.css */
+.header {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .header nav ul li {
+    display: inline;
+  }
+  
+  .header nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  
+  .header nav ul li a:hover {
+    background-color: #555;
+  }
+  
